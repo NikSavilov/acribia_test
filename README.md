@@ -22,3 +22,5 @@ python3 manage.py runserver
 ```
 
 RabbitMQ required, change credentials in settings.py.
+
+![Screenshot](https://raw.githubusercontent.com/NikSavilov/acribia_test/master/Screenshot.jpg)
