@@ -1,0 +1,6 @@
+channels
+Django
+django-celery
+celery
+asgiref
+asgi-rabbitmq

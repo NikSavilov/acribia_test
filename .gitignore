@@ -1,0 +1,5 @@
+.idea/
+__pycache__/
+lin_venv/
+venv/
+db.sqlite3

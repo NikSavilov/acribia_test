@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Check List</title>
+</head>
+<body>
+<p> Requested URL: {{ url_json }} </p>
+<table id="check-table">
+    <tr>
+        <th>URL + Path</th>
+        <th>Status</th>
+    </tr>
+</table>
+<br/>
+</body>
+<script>
+    var key = '{{ key }}';
+    var chatSocket = new WebSocket(
+        'ws://' + window.location.host +
+        '/ws/list/' + key + '/');
+
+    chatSocket.onmessage = function (e) {
+        var data = JSON.parse(e.data);
+
+        document.querySelector('#check-table').innerHTML +=
+            "<tr><th>" + data['url'] + "</th><th>" + data['exists'] + "</th></tr>";
+    };
+
+    chatSocket.onclose = function (e) {
+        console.error('Socket closed unexpectedly');
+    };
+</script>
+</html>
