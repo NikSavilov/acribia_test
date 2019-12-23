@@ -1,6 +1,5 @@
 import os
 import threading
-import time
 import traceback
 from queue import Queue
 import requests
@@ -32,7 +31,7 @@ def check_url(url, key=""):
 					{
 						"type": "channel_message",
 						'url': url_,
-						'exists': "✅ - 200" if r.status_code == 200 else "⤴ - 3**" if redirected else "⛔ - 4**" + str(time.time())
+						'exists': "✅ - 200" if r.status_code == 200 else "⤴ - 3**" if redirected else "⛔ - 4**"
 					}
 				)
 			except:
